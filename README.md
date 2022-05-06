@@ -1,14 +1,19 @@
 # Music Visualiser Project
 
-Name: Aleksey Makarevich, Finn Maguire, Yaroslav Hrabas
-
-Student Number: C20402732, C20492576, C20394791
-
-Songs: Poison Jam - 2 Mello, Gummi Bear Song, DARE
+| Name | Student Number | Song |
+|-----------|-----------|-----------|
+| Aleksey Makarevich |  C20402732 | Poison Jam - 2 Mello |
+| Finn Maguire | C20492576 | Gummy Bear Song |
+| Yaroslav Hrabas | C20394791 | DARE |
 
 # Description of the assignment
 Our assignment consists of a rotating menu. This was done as a challenge, seeing if we could utilise the camera to move around within the 3d space.
 The user "stands" in the centre of the menu, able to turn the view point between the three visualations while it changes the song to match the visualisation.
+
+### Yaris 
+My audio visualisation is a cycle of different shapes, colours and spirals that change depending on the beat of a song which I think is quite unique as the visualisation can change slightly when a different song is imported. This is done by having different scenes being played whenever a drum, beat, snare or even white noise is played throughout a song which ends up giving a very cool, fun and almost hypnotising aesthetic to the entire audio visualiser!
+![YarisVisual](https://user-images.githubusercontent.com/72357455/167223860-00639f35-b0e6-46f8-9e6c-1835679fc9d7.png)
+
 
 ### Finn
 For my visualiser I wanted to try and utilise some kind of fractals. I decided to use tree fractals generated circularly around a point which would alter themselves
@@ -40,6 +45,169 @@ With camera locked you can now
 
 # How it works
 The main menu works by use of a camera centered between the three visualisations. Each visualisation only runs when transitioning to/from the visual and when looking directly at it. The visualisations themselves are stored in their own packages which are called from the draw method. This allows all of us to keep the code to ourselves to avoid merging conflicts. Each visualisation has a somewhat noticiable *trailing* effect which is caused by a semi transparent layer being put onto the camera to give the visualisations a smoother, more *trippy* effect. 
+
+## Yaris 
+NOTE: (Due to git BASH not co-operating with me when trying to commit, all my sending and receiving of files had to be done manually so huge thank you to my team mates). 
+
+For the unique beat detection to work in the audio visualiser, there had to be a variable created at the beginning of the program for nearly every aspect in a song which was then called later depending on the sound played. These variables would be executed by a selector depending on the sensitivity of the bass or snare played in the song. 
+
+```Java 
+	public void render() {
+  
+  oop.getFFT().forward(oop.getAudioPlayer().mix); 
+  bass = (int) (oop.getFFT().getFreq(50)); 
+  snare = (int) (oop.getFFT().getFreq(1760)); 
+  noise = map(oop.getFFT().getFreq(19000), 0, 1, 0, 500); 
+  if (bass>kickboxSens && frameCount>300) {
+    selector = floor(random(1, (float) 5.57)); 
+    weight = (int) (random(1, 50)); 
+  } else {
+    if (snare>snareSens) {
+      weight = (int) (random(1, 65));
+    }
+  }
+  
+  if (selector==2) {
+    oop.strokeWeight(weight + noise/15);
+    square(20, 20, 1);
+  }
+  if (selector==3) {
+    if (bass>kickboxSens/3 & frameCount>600) {
+      oop.strokeWeight(weight + noise/15);
+      square(20, 20, 0);
+    } else {
+      circlepop();
+      fxRain();
+    }
+  }
+  if (selector==4) {
+    kickbox(50, bass, "warm", 2);
+    if (bass>kickboxSens) {
+      selector = floor(random(1, (float) 2.99)); 
+    }
+  }
+  if (selector==5) {
+    kickbox(50, bass, "cool", 1);
+    if (bass>kickboxSens) {
+      selector = floor(random(1, (float) 2.99)); 
+    }
+  }
+  if (selector==2) {
+    spiral();
+  }
+  
+  if (mousePressed) {
+    oop.fill(255);
+    oop.textSize(12);
+    oop.text(kickboxSens, width-40, 30);
+    oop.text(bass, width-80, 30);
+    oop.text(snareSens, width-120, 30);
+    oop.text(snare, width-160, 30); 
+  }
+  
+  if (noise < 1) {
+    selector = 2;
+  }
+```
+
+As you can see in the code above, depending on the sesitivity of the bass or snare played, the program scrolls through until the visual for that particular sound played is displayed. Due to the ever changing sounds played throughout the song, the 'if else' statements are being ran through constantly to keep the visuals up to date. As an example, if the bass was higher than the sensitivity of the snares, there would be more of a "bold" look to the visualisation along with the spirals looking a little more filled etc. 
+
+```Java 
+	void kickbox(int margin, int kickjerk, String colorMode, int thickness) {
+  
+ 
+  topLx = (int) (margin+(random(-kickjerk, kickjerk)));
+  topLy = (int) (margin+(random(-kickjerk, kickjerk)));
+  topCx = (int) (width/2+(random(-kickjerk, kickjerk)));
+  topCy = (int) (margin+(random(-kickjerk, kickjerk)));
+  topRx = (int) (width-margin+(random(-kickjerk, kickjerk)));
+  topRy = (int) (margin+(random(-kickjerk, kickjerk)));
+  
+  midLx = (int) (margin+(random(-kickjerk, kickjerk)));
+  midLy = (int) (height/2+(random(-kickjerk, kickjerk)));
+  midCx = (int) (width/2+(random(-kickjerk, kickjerk)));
+  midCy = (int) (height/2+(random(-kickjerk, kickjerk)));
+  midRx = (int) (width-margin+(random(-kickjerk, kickjerk)));
+  midRy = (int) (height/2+(random(-kickjerk, kickjerk)));
+  
+  botLx = (int) (margin+(random(-kickjerk, kickjerk)));
+  botLy = (int) (height-margin+(random(-kickjerk, kickjerk)));
+  botCx = (int) (width/2+(random(-kickjerk, kickjerk)));
+  botCy = (int) (height-margin+(random(-kickjerk, kickjerk)));
+  botRx = (int) (width-margin+(random(-kickjerk, kickjerk)));
+  botRy = (int) (height-margin+(random(-kickjerk, kickjerk)));
+
+  if (colorMode == "cool") {
+    if (bass>kickboxSens) {
+      oop.stroke(0, random(200, 255), random(150, 255), 230);
+    } else { 
+      oop.noStroke();
+    }
+  }
+  if (colorMode == "warm") {
+    if (bass>kickboxSens) {
+      oop.stroke(random(180, 255), random(50, 75), random(30, 60), 230);
+    } else { 
+      oop.noStroke();
+    }
+  }
+  oop.strokeWeight(random(thickness, thickness+10));
+  
+  oop.line(topLx, topLy, topCx, topCy);
+  oop.line(topCx, topCy, topRx, topRy);
+  oop.line(midLx, midLy, midCx, midCy);
+  oop.line(midCx, midCy, midRx, midRy);
+  oop.line(botLx, botLy, botCx, botCy);
+  oop.line(botCx, botCy, botRx, botRy);
+ 
+  oop.line(topLx, topLy, midLx, midLy);
+  oop.line(topCx, topCy, midCx, midCy);
+  oop.line(topRx, topRy, midRx, midRy);
+  oop.line(midLx, midLy, botLx, botLy);
+  oop.line(midCx, midCy, botCx, botCy);
+  oop.line(midRx, midRy, botRx, botRy);
+  }
+``` 
+
+The code above adds to the different visuals already being created by letting the objects cycle through a colour array and also slightly "jerking" up or down depending on the beat, snare or other noise played. This was done by having variables based on different positions on screen (Top, middle, Bottom, Height, Width, etc.) which added a little more movement and fun to the visualisation. The stroke weight would also control how bold the shapes would look depending on sensitvity. 
+
+The code below is a personal favourite as it drew the spirals you see in the background of the visualisation. 
+
+```Java
+	void spiral() {
+  oop.noFill();
+  arcLength = (float) (arcLength + 0.0001);
+  if (arcLength == 10) {
+    arcLength = (float) 0.0005;
+  }
+  oop.stroke(255);
+  oop.translate(width/2, height/2);
+  for (int r=50; r<650; r=r+5) {
+    ydc.changeColour(0.1f);
+    oop.rotate((float) (millis()/2000.0));
+    oop.strokeWeight(3);
+    oop.arc(0, 0, r*bass/10, r*bass/10, 0, arcLength);
+  }
+```
+Code for the grainy effect seen in the background alongside the spiral: 
+
+```Java 
+	void fxRain() {
+  oop.fill(255);
+  oop.textSize(random(noise));
+  oop.text("l", random(width), random(height));
+}
+
+void fxGrain() {
+  oop.fill(255);
+  oop.textSize(random(noise));
+  oop.text(".", random(width), random(height));
+  oop.text(".", random(width), random(height));
+}
+```
+These 2 pieces of code went hand in hand with each other to give the hypnotic background look to the visualistation. arcLength controlled the size of the spiral throughout different points in the song giving it that zooming in and out look while the changeColour array was ran through to have that flashing lights look. The "for" loop essentially kept its eye on the sensitivity of the base or snare and executed accordingly. 
+oop.text and textSize are used to display different sized dots at different positions on screen at random to give it that constantly changing grainy aesthetic once again acting accordingly to the sounds played. 
+
 
 
 ## Aleksey
@@ -148,6 +316,9 @@ This also lead me to adding the ability to dolly back and forth into my visualis
 ### Finn
 
 ### Yaris
+I am most definitely proud of the little beat detection system created as it took quite some time and at one point, I didn't even think it would ever work. I liked experimenting with it and seeing how crazy I could go and it was most definitely relieving once we had the visualisation working well alongside the other 2 as it posed problematic quite a few times throughout the creation of the audio visualisation. 
+I also liked discovering and implementing the different processing concepts throughout the project such as the PApplet library as it gave even more possibilities to our visualisations and making me more knowledgable on JAVA as a whole 
+
 
 ## Youtube Video:
 
