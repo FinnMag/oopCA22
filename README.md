@@ -304,10 +304,10 @@ This provides a smooth changing colour scheme for an object it is decided to be 
 
 #### Other Functionality ;
 
-## getMouseAngle() :
+##### getMouseAngle() :
 This method inside the OOP.java file is used to track the users cursor and maps it in radians which is used to manually control the tree fractal visual.
 
-## changeBackground() :
+##### changeBackground() :
 This method is used to synchronise the background to the audio by changing the brightness by small intervals for every significant beat detected. The synchronisation is off by default but can be toggled by pressing "B".
 
 # What we are most proud of in the assignment
