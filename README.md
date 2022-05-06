@@ -12,7 +12,6 @@ The user "stands" in the centre of the menu, able to turn the view point between
 
 ### Yaris 
 My audio visualisation is a cycle of different shapes, colours and spirals that change depending on the beat of a song which I think is quite unique as the visualisation can change slightly when a different song is imported. This is done by having different scenes being played whenever a drum, beat, snare or even white noise is played throughout a song which ends up giving a very cool, fun and almost hypnotising aesthetic to the entire audio visualiser!
-![YarisVisual](https://user-images.githubusercontent.com/72357455/167223860-00639f35-b0e6-46f8-9e6c-1835679fc9d7.png)
 
 ### Aleksey
 My visualisation consists of a big *eye* with occasional poison particles during the chorus of the song. The whites of the eye are responsive to the music with its *Iris* being a *trippy* pattern which distorts your vision after staring into the centre for some time. The user can choose to lock into the visual in order to get deeper into the eye or move away from it.
@@ -49,6 +48,9 @@ With camera locked you can now
 The main menu works by use of a camera centered between the three visualisations. Each visualisation only runs when transitioning to/from the visual and when looking directly at it. The visualisations themselves are stored in their own packages which are called from the draw method. This allows all of us to keep the code to ourselves to avoid merging conflicts. Each visualisation has a somewhat noticiable *trailing* effect which is caused by a semi transparent layer being put onto the camera to give the visualisations a smoother, more *trippy* effect. 
 
 ## Yaris 
+
+![YarisVisual](https://user-images.githubusercontent.com/72357455/167223860-00639f35-b0e6-46f8-9e6c-1835679fc9d7.png)
+
 NOTE: (Due to git BASH not co-operating with me when trying to commit, all my sending and receiving of files had to be done manually so huge thank you to my team mates). 
 
 For the unique beat detection to work in the audio visualiser, there had to be a variable created at the beginning of the program for nearly every aspect in a song which was then called later depending on the sound played. These variables would be executed by a selector depending on the sensitivity of the bass or snare played in the song. 
@@ -316,6 +318,9 @@ me to do more than I looked for.
 This also lead me to adding the ability to dolly back and forth into my visualiser as i think its a cool addition to the exerience
 
 ### Finn
+I really enjoyed the process of designing the tree fractal visualiser as it made me step out of my comfort zone by creating visual outside of class and the labs. It
+made me do research on the technicals behind fractals. One thing I found appealing in particular in general was the use of recursion to make an aesthetically pleasing visual when all my prior uses of recursion was only to sort lists and such. Seeing a physical result of my work brought me a level of satisfaction that i havent really
+experienced while programming before. Doing the assignment also made me more familiar with git and java which im sure will do me well in the future.
 
 ### Yaris
 I am most definitely proud of the little beat detection system created as it took quite some time and at one point, I didn't even think it would ever work. I liked experimenting with it and seeing how crazy I could go and it was most definitely relieving once we had the visualisation working well alongside the other 2 as it posed problematic quite a few times throughout the creation of the audio visualisation. 
