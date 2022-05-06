@@ -3,7 +3,7 @@
 | Name | Student Number | Song |
 |-----------|-----------|-----------|
 | Aleksey Makarevich |  C20402732 | Poison Jam - 2 Mello |
-| Finn Maguire | C20492576 | DARE |
+| Finn Maguire | C20492576 | DARE - Gorrilaz |
 | Yaroslav Hrabas | C20394791 | Gummy Bear Song |
 
 # Description of the assignment
