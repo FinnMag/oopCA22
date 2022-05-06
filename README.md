@@ -273,7 +273,7 @@ These utilize pvectors in order to give the *poison* particles velocity and acce
 
 ![image](https://user-images.githubusercontent.com/98547854/167222169-910a7ccc-9cda-4fdd-97f4-c5e33ffee54f.png)
 
-#### FractalTree :
+### FractalTree :
 
 This java class is used to create and display tree fractals circularly around a point.
 The class's constructor reads in variables which determines the amplitude, angles, number of branches and the amount of trees for the visual.
@@ -289,7 +289,7 @@ Inside render() is where the position of the trees are determined using rotate()
 The visual is then either spun using a default method or using the users cursor.
 
 
-#### Colours & DynamicColours :
+### Colours & DynamicColours :
 
 These 2 classes serve as a way to provide smooth colour shifting to drawn objects.
 The colours class is used to create variables that will be used in the DynamicColours class.
@@ -302,12 +302,12 @@ Every frame the values are either incremented or decremented by 1 depending on w
 This provides a smooth changing colour scheme for an object it is decided to be used on.
 
 
-#### Other Functionality ;
+### Other Functionality ;
 
-##### getMouseAngle() :
+### getMouseAngle() :
 This method inside the OOP.java file is used to track the users cursor and maps it in radians which is used to manually control the tree fractal visual.
 
-##### changeBackground() :
+### changeBackground() :
 This method is used to synchronise the background to the audio by changing the brightness by small intervals for every significant beat detected. The synchronisation is off by default but can be toggled by pressing "B".
 
 # What we are most proud of in the assignment
