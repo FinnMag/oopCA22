@@ -14,6 +14,8 @@ The user "stands" in the centre of the menu, able to turn the view point between
 My audio visualisation is a cycle of different shapes, colours and spirals that change depending on the beat of a song which I think is quite unique as the visualisation can change slightly when a different song is imported. This is done by having different scenes being played whenever a drum, beat, snare or even white noise is played throughout a song which ends up giving a very cool, fun and almost hypnotising aesthetic to the entire audio visualiser!
 ![YarisVisual](https://user-images.githubusercontent.com/72357455/167223860-00639f35-b0e6-46f8-9e6c-1835679fc9d7.png)
 
+### Aleksey
+My visualisation consists of a big *eye* with occasional poison particles during the chorus of the song. The whites of the eye are responsive to the music with its *Iris* being a *trippy* pattern which distorts your vision after staring into the centre for some time. The user can choose to lock into the visual in order to get deeper into the eye or move away from it.
 
 ### Finn
 For my visualiser I wanted to try and utilise some kind of fractals. I decided to use tree fractals generated circularly around a point which would alter themselves
