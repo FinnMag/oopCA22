@@ -273,6 +273,7 @@ These utilize pvectors in order to give the *poison* particles velocity and acce
 
 ![image](https://user-images.githubusercontent.com/98547854/167222169-910a7ccc-9cda-4fdd-97f4-c5e33ffee54f.png)
 
+
 ### FractalTree :
 
 This java class is used to create and display tree fractals circularly around a point.
@@ -281,6 +282,7 @@ The class's constructor reads in variables which determines the amplitude, angle
 The constructor also calls the branch method which creates one fractal tree.
 
 ![image](https://user-images.githubusercontent.com/98547854/167225483-e9c656b6-c27b-4637-9f7e-be4181b0a537.png)
+
 
 Inside the method the angles for the branches are determined by the audios averaged amplitude using PApplets map function. 
 The method utlises recursion to create branches which are connected to its parent branch using arrays.
@@ -305,6 +307,7 @@ RGB values are assigned at random which can allow for a different colour scheme 
 Inside the DynamicColours class the RBG values are changed at a rate depending on the speed variable. 
 Every frame the values are either incremented or decremented by 1 depending on whether the value is coming from the lowest value (0) or the max (255)
 This provides a smooth changing colour scheme for an object it is decided to be used on.
+
 
 ![image](https://user-images.githubusercontent.com/98547854/167225443-1edacf43-753d-4db3-91fd-8a95228dc039.png)
 
