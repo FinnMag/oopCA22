@@ -41,7 +41,7 @@ With camera locked you can now
 # How it works
 The main menu works by use of a camera centered between the three visualisations. Each visualisation only runs when transitioning to/from the visual and when looking directly at it. The visualisations themselves are stored in their own packages which are called from the draw method. This allows all of us to keep the code to ourselves to avoid merging conflicts. Each visualisation has a somewhat noticiable *trailing* effect which is caused by a semi transparent layer being put onto the camera to give the visualisations a smoother, more *trippy* effect.
 
-### Aleksey
+## Aleksey
 My part of the visualisations work through a number of methods which i call from my render method.
 ```Java
     public void render() {
@@ -96,7 +96,7 @@ altering *hypnogrow* and *hypno* allowed me to create multiple different styles 
 #### Poison calls for the ParticleSystem and Particle classes to create the "poison" clouds that appear during the song.
 These utilize pvectors in order to give the *poison* particles velocity and acceleration. They have distinct starting points but each poison particle is given different pvectors for side to side motion by use of random guassians. Then a windforce is applied in order to push the particles in towards the mouse giving a sense of *control* to the user.
 
-### Finn
+## Finn
 
 ![image](https://user-images.githubusercontent.com/98547854/167222169-910a7ccc-9cda-4fdd-97f4-c5e33ffee54f.png)
 
