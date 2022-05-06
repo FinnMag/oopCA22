@@ -3,8 +3,8 @@
 | Name | Student Number | Song |
 |-----------|-----------|-----------|
 | Aleksey Makarevich |  C20402732 | Poison Jam - 2 Mello |
-| Finn Maguire | C20492576 | Gummy Bear Song |
-| Yaroslav Hrabas | C20394791 | DARE |
+| Finn Maguire | C20492576 | DARE |
+| Yaroslav Hrabas | C20394791 | Gummy Bear Song |
 
 # Description of the assignment
 Our assignment consists of a rotating menu. This was done as a challenge, seeing if we could utilise the camera to move around within the 3d space.
