@@ -8,7 +8,7 @@
 
 # Description of the assignment
 Our assignment consists of a rotating menu. This was done as a challenge, seeing if we could utilise the camera to move around within the 3d space.
-The user "stands" in the centre of the menu, able to turn the view point between the three visualations while it changes the song to match the visualisation.
+The user "stands" in the centre of the menu, able to turn the view point between the three visualisations while it changes the song to match the visualisation.
 
 ### Finn
 For my visualiser I wanted to try and utilise some kind of fractals. I decided to use tree fractals generated circularly around a point which would alter themselves
@@ -17,6 +17,8 @@ amount of branches and a modifier for the trees amplitude which allows for some 
 
 ### Yaris 
 My audio visualisation is a cycle of different shapes, colours and spirals that change depending on the beat of a song which I think is quite unique as the visualisation can change slightly when a different song is imported. This is done by having different scenes being played whenever a drum, beat, snare or even white noise is played throughout a song which ends up giving a very cool, fun and almost hypnotising aesthetic to the entire audio visualiser!
+
+![YarisVisual](https://user-images.githubusercontent.com/72357455/167223554-11677a88-20ff-4306-8b85-0c88fc461436.png)
 
 
 # Instructions
@@ -309,7 +311,7 @@ This also lead me to adding the ability to dolly back and forth into my visualis
 ### Yaris
 
 I am most definitely proud of the little beat detection system created as it took quite some time and at one point, I didn't even think it would ever work. I liked experimenting with it and seeing how crazy I could go and it was most definitely relieving once we had the visualisation working well alongside the other 2 as it posed problematic quite a few times throughout the creation of the audio visualisation. 
-I also liked discovering and implementing the different processing concepts throughout the project such as the PApplet library as it gave even more possibilities to our visualisations and making me more knowledgable on JAVA as a whole 
+I also liked discovering and implementing the different processing concepts throughout the project such as the PApplet library as it gave even more possibilities to our visualisations and making me more knowledgable on JAVA as a whole. 
 
 
 ## Youtube Video:
