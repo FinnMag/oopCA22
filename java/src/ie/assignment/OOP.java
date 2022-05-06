@@ -23,7 +23,6 @@ public class OOP extends Visual {
     // fractal tree
     FractalTree fv;
     int treeCount = 8;
-    public float branchCount = 0;
     public float rotationCycle = 0;
     public Boolean changeVisual = true;
     public int rotateDirection = 0;
