@@ -56,7 +56,7 @@ public class FractalTree extends PApplet {
             float angle = OOP.map(tree.getSmoothedAmplitude(), 0, 1, 3.14f / 10f, 3.14f / 2f);
 
             branches = new FractalTree[2];
-            tree.branchCount += 2;
+
 
             branches[0] = new FractalTree(tree, amplitude / tree.scrollVal, angle, noBranches - 2, cl, treeCount);
             branches[1] = new FractalTree(tree, amplitude / tree.scrollVal, -angle, noBranches - 2, cl, treeCount);
@@ -92,8 +92,7 @@ public class FractalTree extends PApplet {
             tree.pushMatrix();
 
             tree.translate(tree.width / 2, tree.height / 2);
-
-            tree.branchCount = 0;
+            
             tree.popMatrix();
 
             dc.changeColour(0.1f);
